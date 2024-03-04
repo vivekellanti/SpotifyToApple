@@ -37,6 +37,8 @@ if len(results['playlists']['items']) > 0:
 
     for track in tracks:
         track_name = track['track']['name']
-        print(track_name)
+        artists = track['track']['artists']
+        artist_names = ",".join([artist['name'] for artist in artists])
+        print(f"{track_name} - {artist_names}")
 else:
     print("Playlist not found")
